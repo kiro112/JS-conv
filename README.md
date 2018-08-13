@@ -390,7 +390,7 @@
     const baz = !c;
     ```
 
-    G. Control Statement
+    I. Control Statement
 
     In case your control statement (if, while etc.) gets too long or exceeds the maximum line length, each (grouped) condition could be put into a new line. The logical operator should begin the line.
 
@@ -444,3 +444,180 @@
         thing1();
     }
     ```
+
+    3. Type Checking
+        
+        A. Actual Types
+
+        String:
+        ```javascript
+        typeof variable === "string"
+        ```
+        
+        Number:
+        ```javascript
+        typeof variable === "number"
+        ```
+
+        Boolean:
+        ```javascript
+        typeof variable === "boolean"
+        ```
+
+        Object:
+        ```javascript
+        typeof variable === "object"
+        ```
+
+        Array:
+        ```javascript
+        Array.isArray( arrayLikeObject )
+        ```
+
+        Null:
+        ```javascript
+        variable === null
+        ```
+
+        Undefined:
+        ```javascript
+        typeof variable === 'undefined'
+        ```
+
+        null or undefined or 0 or '':
+        ```javascript
+        !variable
+        ```
+
+        property exists :
+        ```javascript
+        object.hasOwnProperty(prop)
+        ```
+
+
+        B. Coerced Types
+        ```javascript
+        // string to number
+        +'1'; // 1
+        // or
+        parseInt('1'); // 1
+
+        // to boolean
+        !!variable;
+
+        // to string
+        '' + variable;
+        // or
+        variable.toString();
+        ```
+
+    4. Conditional Evaluation
+    ```javascript
+    // When only evaluating that an array has elements/length
+    // instead of this:
+    if (array.length > 0) ...
+
+    // ...evaluate truthiness, like this:
+    if (array.length) ...
+
+
+    // instead of this:
+    if (array.length === 0) ...
+
+    // ...evaluate truthiness, like this:
+    if (!array.length) ...
+
+
+    // When only evaluating that a string is not empty,
+    // instead of this:
+    if ( string !== "" ) ...
+
+    // ...evaluate truthiness, like this:
+    if ( string ) ...
+    ```
+
+    5. Naming
+    
+    Avoid single letter names.
+
+    ```javascript
+    /*
+        snake_case on variables including functions
+    */
+    let foo_bar;
+
+
+    // Do not use trailing or leading underscores
+    let _firstName;
+    let _firstName___;
+    ```
+
+    6. Misc
+
+    ```javascript
+    /*
+        If the function has a lot of arguments,
+        try adding line breaks to make it more readable
+    */
+
+    // Bad
+    do_this(this_one, plus_this_one, true, [this_also, this_also2]);
+
+    // Good
+    do_this(
+        this_one,
+        plus_this_one,
+        true,
+        [this_also, this_also2]
+    );
+    ```
+
+    ```javascript
+    // Use built-in functions as much as possible
+
+    // Use forEach to traverse an array
+    // promotes readability
+    array.forEach(function (element, index, array) {
+
+    });
+
+    // Use filter to filter array
+    // promotes readability
+
+    array = array.filter(function (element, index, array) {
+        return element.property === bar;
+    });
+
+    // Use map to modify an array
+    // promotes readability
+
+    array = array.map(function (element, index, array) {
+        element.created_at = new Date;
+        delete element.foo;
+        return element;
+    });
+
+    // chain forEach, filter, map if possible
+    // promotes readability
+
+    array
+        .filter(function (element) {
+            return element.count > 50;
+        })
+        .map(function (element) {
+            element.count += 100;
+            return element;
+        })
+        .forEach(function (element) {
+            foo(element);
+        });
+    ```
+
+
+
+    <!-- 
+        source:
+        https://github.com/rwaldron/idiomatic.js/
+        https://github.com/airbnb/javascript
+        https://google.github.io/styleguide/jsguide.html#features-string-literals
+     -->
