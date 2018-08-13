@@ -93,61 +93,61 @@
     B. Assignments, Declarations, Functions ( Named, Expression, Constructor )
     
     ```javascript
-        /*
-            Always use const or let to declare variables. Not doing so will result in global variables. We want to avoid polluting the global namespace. Captain Planet warned us of that.
-        */
-       
-       // Bad
-       superPower = new SuperPower();
+    /*
+        Always use const or let to declare variables. Not doing so will result in global variables. We want to avoid polluting the global namespace. Captain Planet warned us of that.
+    */
+    
+    // Bad
+    superPower = new SuperPower();
 
 
-        // Good
-        const superPower = new SuperPower();
+    // Good
+    const superPower = new SuperPower();
     ```
 
     ```javascript
-        // Use one const or let declaration per variable
-        > Why? It’s easier to add new variable declarations this way, and you never have to worry about swapping out a ; for a , or introducing punctuation-only diffs. You can also step through each declaration with the debugger, instead of jumping through all of them at once.
+    // Use one const or let declaration per variable
+    > Why? It’s easier to add new variable declarations this way, and you never have to worry about swapping out a ; for a , or introducing punctuation-only diffs. You can also step through each declaration with the debugger, instead of jumping through all of them at once.
 
-        
-        // not actually bad
-        const items = getItems(),
-            goSportsTeam = true,
-            dragonball = 'z',
-            array = [],
-            object = {};
+    
+    // not actually bad
+    const items = getItems(),
+        goSportsTeam = true,
+        dragonball = 'z',
+        array = [],
+        object = {};
 
-        // will be a problem if
-        const items = getItems(),
-            goSportsTeam = true,
-            dragonball = 'z';
-            array = [],
-            object = {};
+    // will be a problem if
+    const items = getItems(),
+        goSportsTeam = true,
+        dragonball = 'z';
+        array = [],
+        object = {};
 
-        
-        // better
-        const items = getItems;
-        const goSportsTeam = true;
-        const dragonball = 'z';
-        const array = [];
-        const object = {}
+    
+    // better
+    const items = getItems;
+    const goSportsTeam = true;
+    const dragonball = 'z';
+    const array = [];
+    const object = {}
     ```
 
     ```javascript
-        /*
-            Horizontal alignment: DISCOURAGED
-        /*
-        // permitted but future edits may leave it unaligned
-        {
-            tiny:   42,
-            longer: 435
-        }
+    /*
+        Horizontal alignment: DISCOURAGED
+    /*
+    // permitted but future edits may leave it unaligned
+    {
+        tiny:   42,
+        longer: 435
+    }
 
-        // prefer
-        {
-            tiny: 42,
-            longer: 435
-        }
+    // prefer
+    {
+        tiny: 42,
+        longer: 435
+    }
     ```
 
     ```javascript
