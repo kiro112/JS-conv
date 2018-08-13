@@ -620,4 +620,5 @@
         https://github.com/rwaldron/idiomatic.js/
         https://github.com/airbnb/javascript
         https://google.github.io/styleguide/jsguide.html#features-string-literals
+        https://github.com/anyTV/JS-conventions/blob/master/README.md
      -->
