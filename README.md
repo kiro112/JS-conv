@@ -551,7 +551,7 @@
     let _firstName___;
     ```
 
-    6. Misc
+6. Misc
 
     ```javascript
     /*
