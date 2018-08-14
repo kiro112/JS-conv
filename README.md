@@ -510,106 +510,107 @@
     ```
 
 4. Conditional Evaluation
-```javascript
-// When only evaluating that an array has elements/length
-// instead of this:
-if (array.length > 0) ...
 
-// ...evaluate truthiness, like this:
-if (array.length) ...
+    ```javascript
+    // When only evaluating that an array has elements/length
+    // instead of this:
+    if (array.length > 0) ...
 
-
-// instead of this:
-if (array.length === 0) ...
-
-// ...evaluate truthiness, like this:
-if (!array.length) ...
+    // ...evaluate truthiness, like this:
+    if (array.length) ...
 
 
-// When only evaluating that a string is not empty,
-// instead of this:
-if ( string !== "" ) ...
+    // instead of this:
+    if (array.length === 0) ...
 
-// ...evaluate truthiness, like this:
-if ( string ) ...
-```
+    // ...evaluate truthiness, like this:
+    if (!array.length) ...
+
+
+    // When only evaluating that a string is not empty,
+    // instead of this:
+    if ( string !== "" ) ...
+
+    // ...evaluate truthiness, like this:
+    if ( string ) ...
+    ```
 
 5. Naming
 
-Avoid single letter names.
+    Avoid single letter names.
 
-```javascript
-/*
-    snake_case on variables including functions
-*/
-let foo_bar;
+    ```javascript
+    /*
+        snake_case on variables including functions
+    */
+    let foo_bar;
 
 
-// Do not use trailing or leading underscores
-let _firstName;
-let _firstName___;
-```
+    // Do not use trailing or leading underscores
+    let _firstName;
+    let _firstName___;
+    ```
 
-6. Misc
+    6. Misc
 
-```javascript
-/*
-    If the function has a lot of arguments,
-    try adding line breaks to make it more readable
-*/
+    ```javascript
+    /*
+        If the function has a lot of arguments,
+        try adding line breaks to make it more readable
+    */
 
-// Bad
-do_this(this_one, plus_this_one, true, [this_also, this_also2]);
+    // Bad
+    do_this(this_one, plus_this_one, true, [this_also, this_also2]);
 
-// Good
-do_this(
-    this_one,
-    plus_this_one,
-    true,
-    [this_also, this_also2]
-);
-```
+    // Good
+    do_this(
+        this_one,
+        plus_this_one,
+        true,
+        [this_also, this_also2]
+    );
+    ```
 
-```javascript
-// Use built-in functions as much as possible
+    ```javascript
+    // Use built-in functions as much as possible
 
-// Use forEach to traverse an array
-// promotes readability
-array.forEach(function (element, index, array) {
+    // Use forEach to traverse an array
+    // promotes readability
+    array.forEach(function (element, index, array) {
 
-});
-
-// Use filter to filter array
-// promotes readability
-
-array = array.filter(function (element, index, array) {
-    return element.property === bar;
-});
-
-// Use map to modify an array
-// promotes readability
-
-array = array.map(function (element, index, array) {
-    element.created_at = new Date;
-    delete element.foo;
-    return element;
-});
-
-// chain forEach, filter, map if possible
-// promotes readability
-
-array
-    .filter(function (element) {
-        return element.count > 50;
-    })
-    .map(function (element) {
-        element.count += 100;
-        return element;
-    })
-    .forEach(function (element) {
-        foo(element);
     });
-```
+
+    // Use filter to filter array
+    // promotes readability
+
+    array = array.filter(function (element, index, array) {
+        return element.property === bar;
+    });
+
+    // Use map to modify an array
+    // promotes readability
+
+    array = array.map(function (element, index, array) {
+        element.created_at = new Date;
+        delete element.foo;
+        return element;
+    });
+
+    // chain forEach, filter, map if possible
+    // promotes readability
+
+    array
+        .filter(function (element) {
+            return element.count > 50;
+        })
+        .map(function (element) {
+            element.count += 100;
+            return element;
+        })
+        .forEach(function (element) {
+            foo(element);
+        });
+    ```
 
 
 
