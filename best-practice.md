@@ -50,13 +50,15 @@ Per component structure
 ```
 
 
-**app.js** - API declaration
-**www*** - networking concerns
-**config > env > production** - values should be retrieve from env variables
-**models > index.js** will export the database connection that will be used
-**components > component > index** - will export routes connected to controller
-**components > component > model** - all queries of user controller
-**components > component > test** - components test 
-**templates** - template's that will be used for API
-**helpers** - helper functions
+**app.js** - API declaration <br>
+**www*** - networking concerns <br>
+**config > env > production** - values should be retrieve from env variables <br>
+**models > index.js** will export the database connection that will be used <br>
+**components > component > index** - will export routes connected to controller <br>
+**components > component > model** - all queries of user controller <br>
+**components > component > test** - components test  <br>
+**templates** - template's that will be used for API <br>
+**helpers** - helper functions <br>
 **lib** - middleware's etc
+
+-----
