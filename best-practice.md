@@ -4,9 +4,13 @@
     
     Per component structure
 
+
     ```
     .
     └── app.js
+    └── bin
+        └── www
+    └── config
     └── config
         └── config.js (base-config)
         └── env
@@ -15,15 +19,15 @@
             └── development
                 └── database.js
             └── production
-                └── database.js // values should be retrieve from background env and not defined
+                └── database.js
             └── test
                 └── database.js
         └── routes.js
     └── components
         └── user
-            └── index.js // will export user related route
+            └── index.js
             └── user-ctrl.js
-            └── user-model.js // all queries used in user will be put here
+            └── user-model.js
             └── user.test.js
         └── etc
             └── index.js
@@ -41,4 +45,17 @@
     └── logs
     └── lib // middlewares and lib's
     └── helpers // helper functions
+       └── util.js
+       └── util.test.js 
     ```
+
+    **app.js** - API declaration
+    **www*** - networking concerns
+    **config > env > production** - values should be retrieve from env variables
+    **models > index.js** will export the database connection that will be used
+    **components > component > index** - will export routes connected to controller
+    **components > component > model** - all queries of user controller
+    **components > component > test** - components test 
+    **templates** - template's that will be used for API
+    **helpers** - helper functions
+    **lib** - middleware's etc
